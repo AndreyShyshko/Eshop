@@ -1,13 +1,8 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
 //
 //  Variables
 //  _____________________________________________
 
-@account-title-border-color: @color-gray-middle2;
+@account-title-border-color: #c6c6c6;
 @account-table-border-bottom-color: @color-gray-middle1;
 @account-table-action-delete: @color-red12;
 
@@ -149,8 +144,40 @@
                 margin-top: 0;
             }
 
+            .block-dashboard-content {
+                display: flex;
+                margin-left: -10px;
+                > div {
+                    flex-basis: 100%/3;
+                    border: 1px solid #c6c6c6;
+                    padding: 15px;
+                    margin: 10px;
+                }
+            }
+
             .block:not(.widget) {
-                &:extend(.abs-account-blocks all);
+                .block-title {
+                    font-weight: bold;
+                    font-size: 18px;
+                    margin-bottom: 5px;
+                }
+
+                .block-content {
+                    > a {
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        span {
+                            .lib-icon-font('\ea3c',
+                                @_icon-font: 'eshop-icons',
+                                @_icon-font-position: after
+                            );
+                            &:after {
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -577,12 +604,9 @@
         .column.main {
             .block:not(.widget) {
                 .block-title {
-                    &:extend(.abs-add-clearfix-mobile-m all);
-
-                    > .action {
-                        float: right;
-                        .lib-css(margin-top, @indent__xs);
-                    }
+                    border-bottom: none;
+                    font-weight: bold;
+                    font-size: 12px;
                 }
 
                 .block-content {

@@ -1,0 +1,220 @@
+
+// Homepage styles
+
+& when (@media-common = true) {
+    .home-page-block {
+        .top-banner {
+            margin: 0;
+            padding: @indent__s 0;
+            color: #FFFFFF;
+            font-weight: @font-weight__bold;
+
+            &.left {
+                background-color: #ae92b7;
+
+                &-link {
+                    cursor: pointer;
+                    text-decoration: none;
+                }
+            }
+
+            &.right {
+                background-color: #54c0ff;
+
+                &-link {
+                    cursor: pointer;
+                    text-decoration: none;
+                }
+            }
+        }
+        .banner {
+            position: relative;
+
+            &-header {
+                color: #FFFFFF;
+                position: absolute;
+                width: 100%;
+                text-align: center;
+                text-shadow: 1px 1px 2px black;
+            }
+            &-title {
+                font-family: @font-family__serif;
+                font-weight: @font-weight__bold;
+                &:after {
+                    content: '';
+                    display: block;
+                    background-color: #FFFFFF;
+                    height: 1px;
+                    width: 50px;
+                    box-shadow: 1px 0.5px 2px gray;
+                }
+            }
+            &-text {
+                font-weight: @font-weight__bold;
+            }
+            &-image {
+                background-image: url("@{baseDir}images/old-man.jpg");
+                background-size: cover;
+                background-position: 70% 50%;
+            }
+        }
+        .bottom {
+            &-list {
+                .lib-vendor-prefix-display(flex);
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+                width: 100%;
+            }
+            &-item {
+                width: 220px;
+            }
+            &-title {
+                color: #d75a1d;
+                margin-top: 0;
+                .lib-font-size(10);
+                font-weight: @font-weight__bold;
+                text-transform: uppercase;
+            }
+            &-link {
+                cursor: pointer;
+                color: #FFFFFF;
+                font-family: @font-family__serif;
+                font-weight: @font-weight__bold;
+                .lib-font-size(16);
+                text-shadow: 1px 1px 2px black;
+                .lib-icon-font('\ea3c',
+                    @_icon-font: 'eshop-icons',
+                    @_icon-font-position: after
+                );
+                &:after {
+                    margin-left: @indent__s;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .level {
+        z-index: -1;
+    }
+    .home-page-block {
+        .top-banner {
+            .lib-font-size(9);
+            text-align: center;
+            width: 100%;
+
+            &-wrapper {
+                position: relative;
+            }
+            &.left {
+                position: absolute;
+                &-link {
+                    margin-right: 0;
+                }
+            }
+            &.right {
+                &-link {
+                    margin-left: 0;
+                }
+            }
+        }
+        .banner {
+
+            &-header {
+                top: 20%;
+            }
+            &-title {
+                .lib-font-size(24);
+                &:after {
+                    margin: 15px auto 0;
+                }
+            }
+            &-text {
+                .lib-font-size(12);
+            }
+            &-image {
+                height: 400px;
+            }
+        }
+        .bottom {
+            &-list {
+                background-color: #0a6767;
+                position: static;
+                .lib-vendor-prefix-flex-direction(column);
+                align-items: center;
+            }
+            &-item {
+                padding: @indent__base 0;
+                &:not(:last-child) {
+                    border-bottom: 1px solid #FFFFFF;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .home-page-block {
+        .top-banner {
+            flex: 1;
+            .lib-font-size(10);
+
+            &-wrapper {
+                .lib-vendor-prefix-display(flex);
+            }
+            &.left {
+                text-align: right;
+                &-link {
+                    margin-right: @indent__m * 2;
+                }
+            }
+            &.right {
+                &-link {
+                    margin-left: @indent__m * 2;
+                }
+            }
+        }
+        .banner {
+
+            &-header {
+                top: 35%;
+            }
+            &-title {
+                .lib-font-size(64);
+                &:after {
+                    margin: 30px auto 0;
+                }
+            }
+            &-text {
+                .lib-font-size(24);
+            }
+            &-image {
+                height: 800px;
+            }
+        }
+        .bottom {
+            &-list {
+                position: absolute;
+                bottom: 20px;
+                justify-content: center;
+            }
+            &-item {
+                padding: 0 @indent__base;
+                &:not(:last-child) {
+                    border-right: 1px solid #FFFFFF;
+                }
+            }
+        }
+    }
+}
