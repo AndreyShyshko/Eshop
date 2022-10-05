@@ -1,0 +1,13 @@
+<?php
+
+/** @var \Magento\Customer\Block\Account\Dashboard\Info $block */
+?>
+<div class="block block-dashboard-info">
+    <div class="block-title"><strong><?= $block->escapeHtml(__('Account Information')) ?></strong></div>
+    <div class="block-content">
+        <p class="block-content-text"><?= $block->escapeHtml(__('Already a member? Sign in to receive an exclusive')) ?></p>
+        <a class="action edit" href="<?= $block->escapeUrl($block->getUrl('customer/account/edit')) ?>">
+            <span><?= $block->escapeHtml(__('Edit Information')) ?></span>
+        </a>
+    </div>
+</div>
